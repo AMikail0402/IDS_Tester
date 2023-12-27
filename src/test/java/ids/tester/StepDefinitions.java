@@ -28,10 +28,10 @@ public class StepDefinitions {
         Callback cb = Controller.checkDbAvailability(client);
         Assertions.assertEquals(200, cb.getCode(),cb.getBody());
     }
-    
-    @Dann("Sende Pakete an Api")
-    public void packetsToApi() throws IOException{
-        Callback cb = Controller.sendApi(client);
+   
+    @Dann("Sende Pakete an Nginx")
+    public void packetsToNginx() throws IOException{
+        Callback cb = Controller.sendNginx(client);
         Assertions.assertEquals(200, cb.getCode(),cb.getBody());
     }
 

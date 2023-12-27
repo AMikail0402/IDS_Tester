@@ -22,6 +22,16 @@ public class Controller {
                 }
         return new Callback(cb.getCode(), cb.getBody());
     }
+     public static Callback sendNginx(OkHttpClient client) throws IOException{
+        Callback cb = new Callback(0, null);
+                for(int i=0; i<2;i++){
+                    cb = DbServices.sendNginx(client);
+                    if(cb.getCode() != 200){
+                        return new Callback(cb.getCode(), cb.getBody());
+                    }
+                }
+        return new Callback(cb.getCode(), cb.getBody());
+    }
  
     }
 
