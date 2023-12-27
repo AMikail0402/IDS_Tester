@@ -1,6 +1,6 @@
-Feature: An example
+#language: de
 
-  Scenario: The example
-    Given an example scenario
-    When all step definitions are implemented
-    Then the scenario passes
+Funktionalität: Erster Test
+
+  Szenario: Umgebungsvariable
+    Drucke die Umgebungsvariable
