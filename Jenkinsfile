@@ -4,14 +4,22 @@ pipeline {
 
     stages {
 
-        stage('TCP Packets'){
+        stage('Truncate Table'){
+          steps {
+                script{
+                sh("curl --request DELETE --url http://localhost:3001/clean")
+                }
+            }
+        }        
+
+        /*stage('TCP Packets'){
           steps {
                 script{
                 sh("mvn clean install -DskipTests")
                 }
             }
-        }
-        
+        }*/
+
         stage('Build') {
             steps {
                 script{

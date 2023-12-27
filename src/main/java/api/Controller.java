@@ -12,6 +12,10 @@ public class Controller {
                    return DbServices.checkDbAvailability(client);
     }
 
+    public static Callback truncateDb(OkHttpClient client) throws IOException{
+                   return DbServices.truncateDb(client);
+    }
+
     public static Callback sendApi(OkHttpClient client) throws IOException{
         Callback cb = new Callback(0, null);
                 for(int i=0; i<2;i++){
@@ -32,6 +36,7 @@ public class Controller {
                 }
         return new Callback(cb.getCode(), cb.getBody());
     }
+
  
     }
 

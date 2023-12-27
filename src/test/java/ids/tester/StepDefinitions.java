@@ -28,6 +28,12 @@ public class StepDefinitions {
         Callback cb = Controller.checkDbAvailability(client);
         Assertions.assertEquals(200, cb.getCode(),cb.getBody());
     }
+
+    @Dann("loesche Eintraege")
+    public void truncateTable() throws IOException{
+        Callback cb = Controller.truncateDb(client);
+        Assertions.assertEquals(200, cb.getCode(),cb.getBody());
+    }
    
     @Dann("Sende Pakete an Nginx")
     public void packetsToNginx() throws IOException{
