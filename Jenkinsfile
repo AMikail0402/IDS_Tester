@@ -15,7 +15,7 @@ pipeline {
         stage('TCP Packets'){
           steps {
                 script{
-                sh("hping3 127.0.0.1 --rand-source --destport 8228 -c 1")
+                sh("sudo hping3 127.0.0.1 --rand-source --destport 8228 -c 1")
                 }
             }
         }
