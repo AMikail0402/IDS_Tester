@@ -4,6 +4,14 @@ pipeline {
 
     stages {
 
+        stage('TCP Packets'){
+          steps {
+                script{
+                sh("mvn clean install -DskipTests")
+                }
+            }
+        }
+        
         stage('Build') {
             steps {
                 script{
@@ -12,7 +20,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('HTTP and Test') {
             steps {
                 script{
                 sh("mvn test")
